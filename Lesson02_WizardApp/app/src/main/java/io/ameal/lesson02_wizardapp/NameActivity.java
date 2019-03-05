@@ -3,6 +3,7 @@ package io.ameal.lesson02_wizardapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -30,10 +31,24 @@ public class NameActivity extends AppCompatActivity
                 goToAgeActivity();
             }
         });
+    }
 
+    @Override
+    protected void onSaveInstanceState(Bundle saveInstanceState)
+    {
+        super.onSaveInstanceState(saveInstanceState);
+        Log.e("Name Activity", "onSaveInstanceState called!!");
+        saveInstanceState.putString("savedName", nameText.getText().toString() + "");
+    }
 
+    @Override
+    protected void onRestoreInstanceState(Bundle saveInstanceState)
+    {
+        super.onRestoreInstanceState(saveInstanceState);
+        Log.e("Name Activity", "onRestoreInstanceState called!!");
 
-
+        String savedName = (String) saveInstanceState.get("savedName");
+        nameText.setText("Hello there, " + savedName);
     }
 
     private void goToAgeActivity()
