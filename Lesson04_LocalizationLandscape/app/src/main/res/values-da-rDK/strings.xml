@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Lesson04_LocalizationLandscape</string>
-    <string name="previous">previous</string>
-    <string name="next">next</string>
+    <string name="previous">forrige</string>
+    <string name="next">næste</string>
 </resources>
