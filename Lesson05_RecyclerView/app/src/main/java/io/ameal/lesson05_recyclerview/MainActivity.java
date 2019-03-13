@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
 
     private void init()
     {
-        MyAdapter myAdapter = new MyAdapter(getRandomIntegers(1000));
+        MyAdapter myAdapter = new MyAdapter(this, getRandomIntegers(1000));
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         RecyclerView recyclerView = findViewById(R.id.myRecyclerView);
 
